@@ -141,7 +141,7 @@ char *get_proc_status_by_pid(int pid, void(*cbk)(void *, const char *), void *op
 	return NULL;
 }
 
-int main(int argc, char **argv)
+int proc_status_thread(int argc, char **argv)
 {
     int ret, pid_t[128];
 	ret = find_pid_by_name(argv[1], pid_t);

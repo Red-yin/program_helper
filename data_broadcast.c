@@ -33,8 +33,14 @@ void *main(void *params)
 
 	string_array *card_devices = get_network_cards_name();
 	char buf[16] = {0};
-	get_ipaddress(card_devices->str[1], buf);
-	printf("%s\n", buf);
+	for(int i = 0; i < card_devices->num; i++){
+		memset(buf, 0, sizeof(buf));
+		get_ipaddress(card_devices->str[i], buf);
+		if((strlen(buf) > 0) && (strcmp(buf, "127.0.0.1") != 0)){
+			break;
+		}
+	}
+	printf("ip: %s\n", buf);
 	sprintf(msg, "{\"ip\":\"%s\",\"port\":%d}", buf, server_port);
 
 	while(1){
