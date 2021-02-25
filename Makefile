@@ -1,6 +1,6 @@
 
 TARGET = program_helper
-SOURCE_FILES = ${wildcard ./*.c}
+SOURCE_FILES = ${wildcard ./*.cpp}
 CC = gcc
 RM = rm -rf
 LDFLAG = -lpthread 
@@ -29,4 +29,5 @@ $(OBJECTS):$(SOURCE_FILES)
 	#$(CC) -S $^
 
 clean:
+	echo $(OBJECTS)
 	$(RM) $(TARGET) $(OBJECTS)

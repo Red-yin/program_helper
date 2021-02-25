@@ -1,9 +1,14 @@
+#include "socker_server.h"
 
-int socket_server_init()
+SocketServer::SocketServer()
+{
+	socker_server_init();
+}
+
+int SocketServer::socket_server_init()
 {
 	struct sockaddr_in client; /* client address information          */
     struct sockaddr_in server; /* server address information          */
-	int socket_accept;
 	if ((socket_accept = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         perror("Socket()");
@@ -20,9 +25,4 @@ int socket_server_init()
         tcperror("Bind()");
         exit(3);
     }
-}
-
-void *socket_server_thread(void *param)
-{
-
 }
