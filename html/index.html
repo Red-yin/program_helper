@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Redding</title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="vue.js" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+	<body>
+			<input id="name0" type="checkbox" name="proc_name" value="player">player<br>
+			<input id="name0" type="checkbox" name="proc_name" value="voice">voice<br>
+			<input id="name0" type="checkbox" name="proc_name" value="sound">voice<br>
+			<input id="proc_info" type="submit" value="start" v-on:click="start_timer()" />
+			<button onclick="timerID=window.clearInterval(timerID)">stop</button>
+	</body>
+	<script src="first.js" type="text/javascript" charset="utf-8"></script>
+</html>
